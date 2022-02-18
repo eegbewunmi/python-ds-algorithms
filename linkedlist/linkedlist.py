@@ -69,6 +69,54 @@ class LinkedList:
             
         return('Node {} not found in linked list'.format(data))
 
+    def delete_by_position(self, position):
+        '''Deleting by Value
+        Given the positon of a node delete the node
+        Here, the head node's position is 0'''
+        #Check if position is 0 (head node)
+        current_node = self.head
+        current_position = 0
+        prev_node = None
+
+        if current_node and position == 0:
+            self.head = current_node.next
+            current_node = None
+            return
+        
+        #If any other position
+        while current_node.next:
+            prev_node = current_node
+            current_node = current_node.next
+            current_position += 1
+
+            if current_position == position:
+                prev_node.next = current_node.next
+                return
+
+        return('Node with position {} not found in linked list'.format(position))
+
+    def len_iterative(self):
+        '''Get the length of the linked list iteratively'''
+        current_node = self.head
+        length = 1
+
+        #Check for empty linked list:
+        if current_node is None:
+            return 0 
+
+        while current_node.next:
+            current_node = current_node.next
+            length += 1
+
+        return length
+        
+    def len_recursive(self, node):
+        '''Get the length of the linked list using
+        a recursive method'''
+        if node is None:
+            return 0
+        return 1 + self.len_recursive(node.next)
+
 
 
 
@@ -78,14 +126,18 @@ llist.append("A")
 llist.append("B")
 llist.append("C")
 llist.prepend("D")
+llist.prepend("X")
 
 llist.insert_after_node(llist.head.next, "G")
+# print(llist.len_iterative())  
 
-llist.delete_node("D")
 llist.delete_node("B")
 print(llist.delete_node("E"))
 
-llist.print_list()  
+llist.delete_by_position(2)
+llist.print_list()
+print(llist.len_iterative())  
+print(llist.len_recursive(llist.head))
 
 
         
