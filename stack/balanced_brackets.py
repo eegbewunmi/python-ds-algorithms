@@ -42,14 +42,14 @@ def is_balanced(brac_string):
 
 
 
-print("String : (((({})))) Balanced or not?")
-print(is_balanced("(((({}))))"))
+# print("String : (((({})))) Balanced or not?")
+# print(is_balanced("(((({}))))"))
 
-print("String : [][]]] Balanced or not?")
-print(is_balanced("[][]]]"))
+# print("String : [][]]] Balanced or not?")
+# print(is_balanced("[][]]]"))
 
-print("String : [][] Balanced or not?")
-print(is_balanced("[][]"))
+# print("String : [][] Balanced or not?")
+# print(is_balanced("[][]"))
 
-print("String : [[][] Balanced or not?")
-print(is_balanced("[[][]"))
+# print("String : [[][] Balanced or not?")
+# print(is_balanced("[[][]"))

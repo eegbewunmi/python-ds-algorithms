@@ -18,5 +18,5 @@ def reverse_string(str):
 
     return reverse_str
 
-input_str = "!evitacudE ot emocleW"
-print(reverse_string(input_str))
+# input_str = "!evitacudE ot emocleW"
+# print(reverse_string(input_str))

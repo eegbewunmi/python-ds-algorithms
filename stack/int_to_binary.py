@@ -41,10 +41,10 @@ def int_to_binary(integer_value):
     
 
 
-print(int_to_binary(242))
-print(int_to_binary(56))
-print(int_to_binary(2))
-print(int_to_binary(32))
-print(int_to_binary(10))
-print(int_to_binary(0))
-print(int(int_to_binary(56),2)==56)
+# print(int_to_binary(242))
+# print(int_to_binary(56))
+# print(int_to_binary(2))
+# print(int_to_binary(32))
+# print(int_to_binary(10))
+# print(int_to_binary(0))
+# print(int(int_to_binary(56),2)==56)
