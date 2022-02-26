@@ -250,3 +250,31 @@ class LinkedList:
 		
 	    return self.head
 
+    def nth_to_last(self, n):
+        ''' Given a value 'n', return the nth-to-last node of the linkedlist'''
+        length = self.len_iterative()
+
+        position = length - n
+
+        if position < 0:
+            return 
+
+        initial_position = 0
+        current_node = self.head
+        
+        while current_node:
+            if initial_position == position:
+                return current_node.data
+            current_node = current_node.next
+            initial_position += 1
+
+    def count_occurrences(self, value):
+        count = 0
+        current_node = self.head
+
+        while current_node:
+            if current_node.data == value:
+                count += 1
+            current_node = current_node.next
+
+        return count

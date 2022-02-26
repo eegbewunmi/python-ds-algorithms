@@ -53,11 +53,17 @@ llist2.append(10)
 llist2.append(4)
 llist2.append(10)
 llist2.append(15)
+llist2.append(4)
+
+print(llist2.count_occurrences(4))
 
 
 #print(merge_lists(llist1, llist2))
 # llist1.merge_lists(llist2)
 
-llist2.remove_duplicates()
-llist2.print_list()
+# llist2.remove_duplicates()
+
+# llist1.print_list()
+
+# print(llist1.nth_to_last(6))
         
