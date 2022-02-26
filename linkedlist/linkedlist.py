@@ -187,44 +187,66 @@ class LinkedList:
             return _reverse_recursive(curr_node, prev_node)
         self.head = _reverse_recursive(curr_node=self.head, prev_node=None)
         
+    def merge_lists(self, list2):
+	    ''' Create a new sorted linked lists by
+		merginf two sorted linkedlists'''
+		
+	    i = self.head
+	    j = list2.head
+	    s = LinkedList()
+		
+	    if not i:
+		    return j
+		
+	    if not j:
+		    return i	
+				
+	    while i and j:
+		    if i.data <= j.data:
+			    s.append(i.data)
+			    i = i.next
+		    else:
+			    s.append(j.data)
+			    j = j.next
+				
+	    if not i:
+		    while j:
+			    s.append(j.data)
+			    j=j.next
+	    if not j:
+		    while i:
+			    s.append(i.data)
+			    i=i.next
+		
+	    return s.print_list()
+		
+    def remove_duplicates(self):
+	    '''Given a linkedlist, check for items with duplicate values
+		and remove the duplicates'''
+		
+		#check if list is empty
+	    if self.head is None:
+		    return "Empty List"
+			
+	    prev_node = None
+	    current_node = self.head
+		#next_node = current_node.next
+			
+		#create an empty dictionary
+	    unique_items = list()
+		
+		#Traverse through list
+	    while current_node:
+		    if current_node.data in unique_items:
+				#next_node = current_node.next
+			    prev_node.next = current_node.next
+				#current_node = next_node
+				
+		    else:
+			    unique_items.append(current_node.data)
+			    prev_node = current_node
+				#current_node = current_node.next
+		    current_node = current_node.next
+		
+	    return self.head
 
-
-llist = LinkedList()
-llist.append("A")
-llist.append("B")
-llist.append("C")
-llist.prepend("D")
-llist.prepend("X")
-
-llist.insert_after_node(llist.head.next, "G")
-# print(llist.len_iterative())  
-
-# llist.delete_node("B")
-# print(llist.delete_node("E"))
-
-# llist.delete_by_position(2)
-# llist.print_list()
-
-# llist.node_swap("A", "B")
-# print("Swapping nodes A and B where none is head node")
-llist.print_list()
-
-print("")
-
-llist.node_swap("X", "G")
-print("Swapping nodes X and G where X is head node")
-llist.print_list()
-
-# print("")
-# llist.reverse_iterative()
-# # llist.print_list()
-
-# print("")
-# llist.reverse_recursive()
-# llist.print_list()
-
-# print(llist.len_iterative())  
-# print(llist.len_recursive(llist.head))
-
-
-        
